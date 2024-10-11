@@ -1,5 +1,6 @@
 import Headlines from "@/components/Headlines";
 import LatestNews from "@/components/news/LatestNews";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -11,7 +12,6 @@ export default function Home() {
             {/* collumn 1 */}
             <div className="w-full lg:w-6/12">
               <h2>Latest News</h2>
-
               <LatestNews />
             </div>
             {/* collumn 2 */}
