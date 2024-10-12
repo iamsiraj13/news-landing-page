@@ -3,6 +3,8 @@ import React from "react";
 import "react-multi-carousel/lib/styles.css";
 import Carousel from "react-multi-carousel";
 import NewsCard from "./items/NewsCard";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import Title from "../Title";
 
 const responsive = {
   superLargeDesktop: {
@@ -23,24 +25,45 @@ const responsive = {
     items: 1,
   },
 };
+const ButtonGroup = ({ next, previous }) => {
+  return (
+    <div className="flex justify-between items-center">
+      <Title title="Latest News" />
+      <div className="flex justify-center items-center gap-x-3">
+        <button
+          onClick={() => previous()}
+          className="w-[30px] h-[30px] flex justify-center items-center bg-white border-slate-300 rounded-full hover:bg-slate-600 hover:text-white"
+        >
+          <span>
+            <FiChevronLeft />
+          </span>
+        </button>
+        <button
+          onClick={() => next()}
+          className="w-[30px] h-[30px] flex justify-center items-center bg-white border-slate-300 rounded-full  hover:bg-slate-600 hover:text-white"
+        >
+          <span>
+            <FiChevronRight />
+          </span>
+        </button>
+      </div>
+    </div>
+  );
+};
 const LatestNews = () => {
   return (
     <div className="w-full flex flex-col-reverse gap-3 pr-0">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-        voluptatibus fugit dolore, iure cupiditate ipsum aut facilis recusandae
-        earum laudantium.
-      </p>
       <Carousel
         autoPlay={true}
-        arrows={true}
+        arrows={false}
         renderButtonGroupOutside={true}
+        customButtonGroup={<ButtonGroup />}
         responsive={responsive}
         infinite={true}
-        transitionDuration={100}
+        transitionDuration={200}
       >
         {[1, 2, 3, 4, 5]?.map((item, index) => (
-          <NewsCard key={index} />
+          <NewsCard key={index} item={item} type="latest" />
         ))}
       </Carousel>
     </div>

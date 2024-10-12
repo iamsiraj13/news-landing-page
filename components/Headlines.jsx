@@ -42,7 +42,7 @@ const Headlines = () => {
           </h2>
         </div>
       </div>
-      <div className="flex md:w-calc(100%-170px) w-full">
+      <div className="flex md:w-calc(100%-170px) w-full overflow-hidden">
         <div className="flex w-full justify-start items-center gap-x-2">
           <Marquee>
             {head.map((item) => (
