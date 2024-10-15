@@ -1,6 +1,6 @@
 import React from "react";
 import Title from "../Title";
-import NewsCard from "./items/NewsCard";
+import DetailsNewsCard from "./items/DetailsNewsCard";
 
 const PopularNews = () => {
   return (
@@ -9,7 +9,7 @@ const PopularNews = () => {
         <Title title="Popular News" />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
           {[1, 2, 3, 4]?.map((item, index) => (
-            <NewsCard key={index} />
+            <DetailsNewsCard key={index} />
           ))}
         </div>
       </div>

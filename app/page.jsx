@@ -1,4 +1,5 @@
 import Headlines from "@/components/Headlines";
+import DetailsNewsRow from "@/components/news/items/DetailsNewsRow";
 import NewsCard from "@/components/news/items/NewsCard";
 import LatestNews from "@/components/news/LatestNews";
 import PopularNews from "@/components/news/PopularNews";
@@ -30,6 +31,14 @@ export default function Home() {
           {/* popular news start  */}
           <div className="mt-8">
             <PopularNews />
+          </div>
+          <div className="w-full">
+            <div className="flex flex-wrap">
+              <div className="w-full lg:w-8/12">
+                <DetailsNewsRow category="Sports" type="details-news" />
+              </div>
+              <div className="w-full lg:w-4/12"></div>
+            </div>
           </div>
         </div>
       </div>
